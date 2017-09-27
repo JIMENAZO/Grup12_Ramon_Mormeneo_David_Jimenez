@@ -26,13 +26,13 @@ typedef std::forward_list<int>::const_iterator mycflist;
 typedef std::map<char, int>::iterator mymap;
 typedef std::map<char, int>::reverse_iterator myrmap;
 typedef std::map<char, int>::const_iterator mycmap;
+typedef std::map<char, int>::const_reverse_iterator mycrmap;
 typedef std::set<int>::reverse_iterator myrset;
 typedef std::set<int>::const_iterator mycset;
 typedef std::set<int>::iterator myset;
 
 void main()
 {
-	/*
 	//vector
 	std::vector<int> v1;
 	std::vector<int> v2({ 1,2,3,4,5,6 });
@@ -41,70 +41,95 @@ void main()
 	std::vector<int>v5(5, 10);
 	std::vector<int>v6(v2.begin() + 1, v2.end());
 	int *pv;
-	pv = new int [4] {1, 2, 3, 4};
+	pv = new int[4]{ 1, 2, 3, 4 };
 	std::vector<int>v7(pv, pv + 4);
 	for (myvect it = v2.begin(); it != v2.end(); it++)
 	{
-	std::cout << *it << std::endl;
+		std::cout << *it << std::endl;
 	}
+	std::cout << std::endl;
 	for (myrvect it = v2.rbegin(); it != v2.rend(); it++)
 	{
-	std::cout << *it << std::endl;
+		std::cout << *it << std::endl;
 	}
+	std::cout << std::endl;
 	for (mycvect it = v2.cbegin(); it != v2.cend(); it++)
 	{
-	std::cout << *it << std::endl;
+		std::cout << *it << std::endl;
 	}
+	std::cout << std::endl;
 	for (mycrvect it = v2.crbegin(); it != v2.crend(); it++)
 	{
-	std::cout << *it << std::endl;
-	}*/
-	/*
+		std::cout << *it << std::endl;
+	}
+	std::cout << std::endl;
+	for (int i = 0; i <= v2.size() - 1; i++)
+	{
+		std::cout << v2[i] << std::endl;
+	}
+	std::cout << std::endl;
+	for (int i = v2.size() - 1; i >= 0; i--)
+	{
+		std::cout << v2[i] << std::endl;
+	}
+	std::cout << std::endl;
 	//deque
 	std::deque<int>d1;
 	std::deque<int>d2(5);
-	std::deque<int>d3(5,3);
+	std::deque<int>d3(5, 3);
 	std::deque<int>d4({ 1,2,3,4 });
 	std::deque<int>d5(d4);
-	std::deque<int>d6(d4.begin(),d4.end());
+	std::deque<int>d6(d4.begin(), d4.end());
 	for (mydeq it = d4.begin(); it != d4.end(); it++)
 	{
-	std::cout << *it << std::endl;
+		std::cout << *it << std::endl;
 	}
+	std::cout << std::endl;
 	for (myrdeq it = d4.rbegin(); it != d4.rend(); it++)
 	{
-	std::cout << *it << std::endl;
+		std::cout << *it << std::endl;
 	}
+	std::cout << std::endl;
 	for (mycdeq it = d4.cbegin(); it != d4.cend(); it++)
 	{
-	std::cout << *it << std::endl;
+		std::cout << *it << std::endl;
 	}
+	std::cout << std::endl;
 	for (mycrdeq it = d4.crbegin(); it != d4.crend(); it++)
 	{
-	std::cout << *it << std::endl;
-	}*/
-	/*
+		std::cout << *it << std::endl;
+	}
+	std::cout << std::endl;
+	for (int i = 0; i <= d4.size() - 1; i++)
+	{
+		std::cout << d4[i] << std::endl;
+	}
+	std::cout << std::endl;
+	for (int i = d4.size() - 1; i >= 0; i--)
+	{
+		std::cout << d4[i] << std::endl;
+	}
+	std::cout << std::endl;
+
 	//queue
-	std::deque<int>d4({ 1,2,3,4 });
+	std::deque<int>d7({ 1,2,3,4 });
 	std::queue<int> que1;
 	std::queue<int> que2({ 1,2,3,4 });
 	std::queue<int> que3(que2);
-	std::queue<int> que4(d4);*/
-	/*
+	std::queue<int> que4(d7);
 	//priority_queue
 	int myints[]{ 10,20,30,40 };
 	std::priority_queue<int> pque1;
-	std::priority_queue<int> pque2(myints,myints+4);
-	std::priority_queue<int> pque3(pque2);*/
-	/*
-	//stack
-	std::deque<int>d4({ 1,2,3,4 });
-	std::stack<int> que1;
-	std::stack<int> que2({ 1,2,3,4 });
-	std::stack<int> que3(que2);
-	std::stack<int> que4(d4)*/
+	std::priority_queue<int> pque2(myints, myints + 4);
+	std::priority_queue<int> pque3(pque2);
 
-	/*
+	//stack
+	std::deque<int>d8({ 1,2,3,4 });
+	std::stack<int> stack1;
+	std::stack<int> stack2({ 1,2,3,4 });
+	std::stack <int> stack3(stack2);
+	std::stack<int> stack4(d8);
+
 	//list
 	std::list<int> l1;
 	l1.push_back(1);
@@ -113,89 +138,95 @@ void main()
 	std::list<int> l2(l1);
 	std::list<int> l3;
 	l3 = l2;
-	int myints[]{ 10,20,30,40 };
-	std::list<int> l5(myints,myints+5);
-	for (mylist it = l1.begin(); it < l1.end; it++)
-	{
-	std::cout << *it << std::endl;
-	}
-	for (myrlist it = l1.rbegin(); it < l1.rend; it++)
-	{
-	std::cout << *it << std::endl;
-	}
-	for (myclist it = l1.cbegin(); it < l1.cend; it++)
-	{
-	std::cout << *it << std::endl;
-	}
-	for (mycrlist it = l1.crbegin(); it < l1.crend; it++)
-	{
-	std::cout << *it << std::endl;
-	}*/
-
-    // forward_list
-    /*
-    std::forward_list<int> l1;
-	l1.push_front(1);
-	l1.push_front(2);
-	l1.push_front(3);
-	std::forward_list<int> l2(l1);
-	std::forward_list<int> l3;
-	l3 = l2;
-	int myints[]{ 10,20,30,40 };
-	std::forward_list<int> l5(myints, myints + 5);
-	for (myflist it = l1.begin(); it < l1.end; it++)
+	int myints2[]{ 10,20,30,40 };
+	std::list<int> l5(myints, myints + 5);
+	for (mylist it = l1.begin(); it != l1.end(); it++)
 	{
 		std::cout << *it << std::endl;
 	}
-	for (mycflist it = l1.cbegin(); it < l1.cend; it++)
+	std::cout << std::endl;
+	for (myrlist it = l1.rbegin(); it != l1.rend(); it++)
 	{
 		std::cout << *it << std::endl;
 	}
+	std::cout << std::endl;
+	for (myclist it = l1.cbegin(); it != l1.cend(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
+	std::cout << std::endl;
+	for (mycrlist it = l1.crbegin(); it != l1.crend(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
+	std::cout << std::endl;
 
-	*/
+	// forward_list
+	std::forward_list<int> fl1;
+	fl1.push_front(1);
+	fl1.push_front(2);
+	fl1.push_front(3);
+	fl1.push_front(4);
+	std::forward_list<int> fl2(fl1);
+	std::forward_list<int> fl3;
+	fl3 = fl2;
+	int myints3[]{ 10,20,30,40 };
+	std::forward_list<int> fl5(myints, myints + 4);
+	for (myflist it = fl5.begin(); it != fl5.end(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
+	std::cout << std::endl;
+	for (mycflist it = fl5.cbegin(); it != fl5.cend(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
+	std::cout << std::endl;
 
-    // map
-/*
-struct Person
-{
-	int age;
-	int ranking;
-};
-  std::map<std::string, Person> persons;
+	// map
+	struct Person
+	{
+		int age;
+		int ranking;
+	};
+	std::map<std::string, Person> persons;
 
-  persons["David"] = { 19,21 };
+	persons["David"] = { 19,21 };
 
-  std::map<char, int> first;
-  first['a'] = 10;
-  first['b'] = 30;
-  first['c'] = 50;
-  first['d'] = 70;
+	std::map<char, int> first;
+	first['a'] = 10;
+	first['b'] = 30;
+	first['c'] = 50;
+	first['d'] = 70;
 
-  std::map<char, int> second(first.begin(), first.end());  std::map<char, int> third(second);  for (mymap it = first.begin(); it != first.end(); it++)
-  {
-	  std::cout << it->first <<it ->second << std::endl;
-  }  for (myrmap it = first.rbegin(); it != first.rend(); it++)
-  {
-	  std::cout << it->first << it->second << std::endl;
-  }  for (mycmap it = first.cbegin(); it != first.cend(); it++)
-  {
-	  std::cout << it->first << it->second << std::endl;
-  }  */
-   
-// set
-/*
-std::set<int> c1, c2;
-c1.insert(1);
-c1.insert(4);
-c1.insert(3);std::set <std::string> c4({"abc", "def", "ghijk" });std::set <std::string> s5(c4);for (myset it = c1.begin(); it != c1.end(); it++)
-{
-	std::cout << *it << std::endl;
-}for (mycset it = c1.cbegin(); it != c1.cend(); it++)
-{
-	std::cout << *it << std::endl;
-}for (myrset it = c1.rbegin(); it != c1.rend(); it++)
-{
-	std::cout << *it << std::endl;
-}*/
-
+	std::map<char, int> second(first.begin(), first.end());	std::map<char, int> third(second);	for (mymap it = first.begin(); it != first.end(); it++)
+	{
+		std::cout << it->first << it->second << std::endl;
+	}	std::cout << std::endl;	for (myrmap it = first.rbegin(); it != first.rend(); it++)
+	{
+		std::cout << it->first << it->second << std::endl;
+	}	std::cout << std::endl;	for (mycmap it = first.cbegin(); it != first.cend(); it++)
+	{
+		std::cout << it->first << it->second << std::endl;
+	}
+	std::cout << std::endl;
+	for (mycrmap it = first.crbegin(); it != first.crend(); it++)
+	{
+		std::cout << it->first << it->second << std::endl;
+	}
+	std::cout << std::endl;
+	// set
+	std::set<int> c1, c2;
+	c1.insert(1);
+	c1.insert(4);
+	c1.insert(3);	std::set <std::string> c4({ "abc", "def", "ghijk" });	std::set <std::string> s5(c4);	for (myset it = c1.begin(); it != c1.end(); it++)
+	{
+		std::cout << *it << std::endl;
+	}	std::cout << std::endl;	for (mycset it = c1.cbegin(); it != c1.cend(); it++)
+	{
+		std::cout << *it << std::endl;
+	}	std::cout << std::endl;	for (myrset it = c1.rbegin(); it != c1.rend(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
 }
